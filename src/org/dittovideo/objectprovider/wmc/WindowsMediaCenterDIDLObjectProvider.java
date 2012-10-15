@@ -14,7 +14,7 @@ public class WindowsMediaCenterDIDLObjectProvider extends AbstractDIDLObjectProv
 	private WindowsMediaCenterManager<DIDLObject> manager = new WindowsMediaCenterManager<DIDLObject>(root);
 	
 	@Override
-	public List<DIDLObject> buildDIDLObjects(ProgressableObjectMonitor monitor) {
+	public List<D IDLObject> buildDIDLObjects(ProgressableObjectMonitor monitor) {
 		manager.refreshCache(monitor);
 		return root.getChildren();
 	}
