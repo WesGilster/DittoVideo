@@ -1,0 +1,99 @@
+M-SEARCH * HTTP/1.1
+Host:[FF02::C]:1900
+ST:urn:Microsoft Windows Peer Name Resolution Protocol: V4:IPV6:LinkLocal
+Man:"ssdp:discover"
+MX:3
+
+M-SEARCH * HTTP/1.1
+Man: "ssdp:discover"
+Mx: 3
+Host: 239.255.255.250:1900
+St: ssdp:all
+
+HTTP/1.1 200 OK
+ST:urn:schemas-upnp-org:service:WANPOTSLinkConfig:1
+USN:uuid:cf730f15-a29b-49b8-89c5-c38b001e08ba::urn:schemas-upnp-org:service:WANPOTSLinkConfig:1
+Location:http://192.168.1.2:2869/upnphost/udhisapi.dll?content=uuid:113229e4-2c2c-4646-b9c0-8ef9fe488475
+Cache-Control:max-age=1800
+Server:Microsoft-Windows-NT/5.1 UPnP/1.0 UPnP-Device-Host/1.0
+Ext:
+
+NOTIFY * HTTP/1.1
+HOST: 239.255.255.250:1900
+NT: urn:schemas-upnp-org:device:MediaRenderer:1
+NTS: ssdp:byebye
+USN: uuid:00000000-0000-1010-8000-5442498298F8::urn:schemas-upnp-org:device:MediaRenderer:1
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Server-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+
+------------------------------
+
+Content-Type: text/xml; charset="utf-8"
+Server: Windows_XP-x86-5.1, UPnP/1.0, PMS/1.50.0
+Content-Length: 3372
+
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<s:Body>
+<u:BrowseResponse xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+<Result>
+<DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><item id="0$12$9$1" parentID="0$12$9" restricted="true"><dc:title>50 First Dates</dc:title><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_OP=11" duration="01:38:59.00" resolution="720x480" bitrate="0" nrAudioChannels="6">http://192.168.1.2:5001/get/0$12$9$1/50+First+Dates</res><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11" duration="01:38:59.00" resolution="720x480" bitrate="0" nrAudioChannels="6">http://192.168.1.2:5001/get/0$12$9$1/50+First+Dates</res><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11" duration="01:38:59.00" resolution="720x480" bitrate="0" nrAudioChannels="6">http://192.168.1.2:5001/get/0$12$9$1/50+First+Dates</res><upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.2:5001/get/0$12$9$1/thumbnail000050+First+Dates</upnp:albumArtURI><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$12$9$1/thumbnail000050+First+Dates</res><dc:date>2011-12-20T12:39:52</dc:date><upnp:class>object.item.videoItem</upnp:class></item><item id="0$12$9$2" parentID="0$12$9" restricted="true"><dc:title>Bedtime Stories</dc:title><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_OP=11" duration="01:39:07.00" resolution="720x480" bitrate="0" nrAudioChannels="6">http://192.168.1.2:5001/get/0$12$9$2/Bedtime+Stories</res><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11" duration="01:39:07.00" resolution="720x480" bitrate="0" nrAudioChannels="6">http://192.168.1.2:5001/get/0$12$9$2/Bedtime+Stories</res><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11" duration="01:39:07.00" resolution="720x480" bitrate="0" nrAudioChannels="6">http://192.168.1.2:5001/get/0$12$9$2/Bedtime+Stories</res><upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.2:5001/get/0$12$9$2/thumbnail0000Bedtime+Stories</upnp:albumArtURI><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$12$9$2/thumbnail0000Bedtime+Stories</res><dc:date>2011-12-21T14:30:00</dc:date><upnp:class>object.item.videoItem</upnp:class></item></DIDL-Lite>
+</Result>
+<NumberReturned>2</NumberReturned>
+<TotalMatches>11</TotalMatches>
+<UpdateID>2</UpdateID>
+</u:BrowseResponse>
+</s:Body>
+</s:Envelope>
+
+
+
+Content-type: text/xml;charset="utf-8"
+Content-length: 1120
+Server: Windows7/6.1 UPnP/1.0 Teleal-Cling/1.0
+Ext: 
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+<s:Body>
+<u:BrowseResponse xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+<Result>
+<DIDL-Lite xmlns=&quot;urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/&quot; xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:upnp=&quot;urn:schemas-upnp-org:metadata-1-0/upnp/&quot;><item id=&quot;2&quot; parentID=&quot;1&quot; restricted=&quot;false&quot;><dc:title>Big Buck Bunny</dc:title><dc:creator>Blender</dc:creator><upnp:class>object.item.videoItem</upnp:class><res protocolInfo=&quot;http-get:*:video/vnd.dlna.mpeg-tts:dlna.org_pn=avc_ts_hd_24_ac3;sony.com_pn=avc_ts_hd_24_ac3:*&quot; size=&quot;626411&quot;>http://www.fileformat.info/format/mpeg/sample/567fd6a0e0da4a8e81bdeb870de3b19c/DELTA.MPG</res></item></DIDL-Lite>
+</Result>
+<NumberReturned>1</NumberReturned>
+<TotalMatches>1</TotalMatches>
+<UpdateID>0</UpdateID>
+</u:BrowseResponse>
+</s:Body>
+</s:Envelope>
+
+
+Content-Type: text/xml; charset="utf-8"
+
+Server: Windows_XP-x86-5.1, UPnP/1.0, PMS/1.50.0
+
+Content-Length: 5963
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+
+<s:Body>
+
+<u:BrowseResponse xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+
+<Result><DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"><container id="0$2$1" childCount="1" parentID="0$2" restricted="true"><dc:title>Adults</dc:title><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$2$1/thumbnail0000Adults</res><dc:date>2012-04-29T21:34:13</dc:date><upnp:class>object.container.storageFolder</upnp:class></container><container id="0$2$2" childCount="1" parentID="0$2" restricted="true"><dc:title>Girls</dc:title><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$2$2/thumbnail0000Girls</res><dc:date>2012-03-10T19:46:07</dc:date><upnp:class>object.container.storageFolder</upnp:class></container><container id="0$2$3" childCount="1" parentID="0$2" restricted="true"><dc:title>Halloween</dc:title><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$2$3/thumbnail0000Halloween</res><dc:date>2012-01-15T14:07:48</dc:date><upnp:class>object.container.storageFolder</upnp:class></container><container id="0$2$4" childCount="1" parentID="0$2" restricted="true"><dc:title>Kids (Animated)</dc:title><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$2$4/thumbnail0000Kids+%28Animated%29</res><dc:date>2012-03-25T10:39:27</dc:date><upnp:class>object.container.storageFolder</upnp:class></container><container id="0$2$5" childCount="1" parentID="0$2" restricted="true"><dc:title>Kids (Not Animated)</dc:title><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$2$5/thumbnail0000Kids+%28Not+Animated%29</res><dc:date>2012-01-29T15:18:32</dc:date><upnp:class>object.container.storageFolder</upnp:class></container><container id="0$2$6" childCount="1" parentID="0$2" restricted="true"><dc:title>Young Children</dc:title><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$2$6/thumbnail0000Young+Children</res><dc:date>2012-03-04T09:15:27</dc:date><upnp:class>object.container.storageFolder</upnp:class></container><item id="0$2$7" parentID="0$2" restricted="true"><dc:title>BrendaFunnyMoment.mpg</dc:title><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_OP=11" size="15136855" duration="00:00:36.00" resolution="320x240" bitrate="418503" nrAudioChannels="2" sampleFrequency="44100">http://192.168.1.2:5001/get/0$2$7/BrendaFunnyMoment.mpg</res><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11" size="15136855" duration="00:00:36.00" resolution="320x240" bitrate="418503" nrAudioChannels="2" sampleFrequency="44100">http://192.168.1.2:5001/get/0$2$7/BrendaFunnyMoment.mpg</res><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11" size="15136855" duration="00:00:36.00" resolution="320x240" bitrate="418503" nrAudioChannels="2" sampleFrequency="44100">http://192.168.1.2:5001/get/0$2$7/BrendaFunnyMoment.mpg</res><upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.2:5001/get/0$2$7/thumbnail0000BrendaFunnyMoment.mpg</upnp:albumArtURI><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$2$7/thumbnail0000BrendaFunnyMoment.mpg</res><dc:date>2001-05-08T23:54:46</dc:date><upnp:class>object.item.videoItem</upnp:class></item><item id="0$2$8" parentID="0$2" restricted="true"><dc:title>RoseBloom.avi [MEncoder]</dc:title><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_OP=11" duration="00:00:06.00" resolution="240x180" bitrate="144354" nrAudioChannels="1" sampleFrequency="22050">http://192.168.1.2:5001/get/0$2$8/RoseBloom.avi</res><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11" duration="00:00:06.00" resolution="240x180" bitrate="144354" nrAudioChannels="1" sampleFrequency="22050">http://192.168.1.2:5001/get/0$2$8/RoseBloom.avi</res><res xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11" duration="00:00:06.00" resolution="240x180" bitrate="144354" nrAudioChannels="1" sampleFrequency="22050">http://192.168.1.2:5001/get/0$2$8/RoseBloom.avi</res><upnp:albumArtURI xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/" dlna:profileID="JPEG_TN">http://192.168.1.2:5001/get/0$2$8/thumbnail0000RoseBloom.avi</upnp:albumArtURI><res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN">http://192.168.1.2:5001/get/0$2$8/thumbnail0000RoseBloom.avi</res><dc:date>1999-06-21T19:08:10</dc:date><upnp:class>object.item.videoItem</upnp:class></item></DIDL-Lite></Result>
+
+<NumberReturned>8</NumberReturned>
+
+<TotalMatches>11</TotalMatches>
+
+<UpdateID>2</UpdateID>
+
+</u:BrowseResponse>
+
+</s:Body>
+
+</s:Envelope>

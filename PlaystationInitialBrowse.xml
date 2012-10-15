@@ -1,0 +1,192 @@
+http://192.168.1.2:5001/description/fetch
+Xpath: root/device/serviceList/service/SCPDURL
+http://192.168.1.2:5001/UPnP_AV_ContentDirectory_1.0.xml
+Xpath: /scpd/actionList/action/name#Browse
+
+
+POST /upnp/control/content_directory HTTP/1.1
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+Host: 192.168.1.2:5001
+User-Agent: UPnP/1.0 DLNADOC/1.50
+Content-Length: 639
+Content-Type: text/xml; charset="utf-8"
+SOAPACTION: "urn:schemas-upnp-org:service:ContentDirectory:1#Browse"
+
+<?xml version="1.0"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+    s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" >
+    <s:Body>
+        <u:Browse xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1" >
+            <ObjectID>
+0
+            </ObjectID>
+            <BrowseFlag>
+BrowseDirectChildren
+            </BrowseFlag>
+            <Filter>
+dc:title,av:mediaClass,dc:date,@childCount,res,upnp:class,res@resolution,upnp:album,upnp:genre,upnp:albumArtURI,upnp:albumArtURI@dlna:profileID,dc:creator,res@size,res@duration,res@bitrate,res@protocolInfo
+            </Filter>
+            <StartingIndex>
+0
+            </StartingIndex>
+
+            <RequestedCount>
+10
+            </RequestedCount>
+            <SortCriteria>
+            </SortCriteria>
+        </u:Browse>
+    </s:Body>
+</s:Envelope>
+
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset="utf-8"
+Server: Windows_XP-x86-5.1, UPnP/1.0, PMS/1.50.0
+Content-Length: 2812
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<s:Body>
+<u:BrowseResponse xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
+<Result>
+    
+<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"
+    xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" >
+
+    <container
+        id="0$1"
+        childCount="1"
+        parentID="0"
+        restricted="true" >
+
+        <dc:title>
+Digital Camera Pictures
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$1/thumbnail0000Digital+Camera+Pictures
+        </res>
+
+        <dc:date>
+2012-07-09T10:49:58
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$2"
+        childCount="1"
+        parentID="0"
+        restricted="true" >
+
+        <dc:title>
+f:\ [Video2]
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2/thumbnail0000f%3A%5C+%5BVideo2%5D
+        </res>
+
+        <dc:date>
+2012-09-12T03:01:09
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$3"
+        childCount="1"
+        parentID="0"
+        restricted="true" >
+
+        <dc:title>
+o:\ [Video1]
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$3/thumbnail0000o%3A%5C+%5BVideo1%5D
+        </res>
+
+        <dc:date>
+2012-09-12T03:01:10
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$11"
+        childCount="1"
+        parentID="0"
+        restricted="true" >
+
+        <dc:title>
+firstFolder
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$11/thumbnail0000firstFolder
+        </res>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$12"
+        childCount="1"
+        parentID="0"
+        restricted="true" >
+
+        <dc:title>
+leadPerformer
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$12/thumbnail0000leadPerformer
+        </res>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$13"
+        childCount="1"
+        parentID="0"
+        restricted="true" >
+
+        <dc:title>
+genre
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$13/thumbnail0000genre
+        </res>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+</DIDL-Lite>
+
+</Result>
+<NumberReturned>6</NumberReturned>
+<TotalMatches>11</TotalMatches>
+<UpdateID>2</UpdateID>
+</u:BrowseResponse>
+</s:Body>
+</s:Envelope>
+

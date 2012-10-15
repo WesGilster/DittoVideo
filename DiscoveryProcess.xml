@@ -1,0 +1,728 @@
+1. TV sends out 3 multicast discovery packets to 239.255.255.250:1900
+M-SEARCH * HTTP/1.1
+HOST: 239.255.255.250:1900
+ST: urn:schemas-upnp-org:device:MediaServer:1
+MAN: "ssdp:discover"
+MX: 2
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+
+-------------------------------------------
+
+2a. MediaServer responds with the following 3 multicast response packets directly to the device on port:1900
+HTTP/1.1 200 OK
+Cache-control: max-age=1800
+X-cling-iface-mac: E0:2A:82:A8:29:D0
+Usn: uuid:9d02b786-9544-a4d9-ffff-ffffe2242ea3::urn:schemas-upnp-org:device:MediaServer:1
+Location: http://192.168.1.12:54263/dev/9d02b786-9544-a4d9-ffff-ffffe2242ea3/desc.xml
+Server: Windows7/6.1 UPnP/1.0 Teleal-Cling/1.0
+Ext: 
+St: urn:schemas-upnp-org:device:MediaServer:1
+
+2b. Windows Media Server responds 
+GET /upnphost/udhisapi.dll?content=uuid:30302e5a-5077-49aa-942c-156e66812547 HTTP/1.1
+Host: 192.168.1.12:2869
+Date: Sun, 23 Sep 2012 02:29:21 GMT
+User-Agent: UPnP/1.0
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+
+2c. PSP Server responds with:
+HTTP/1.1 200 OK
+CACHE-CONTROL: max-age=1200
+DATE: Sun, 23 Sep 2012 02:29:16 GMT
+LOCATION: http://192.168.1.2:5001/description/fetch
+SERVER: Windows_XP-x86-5.1, UPnP/1.0, PMS/1.50.0
+ST: urn:schemas-upnp-org:device:MediaServer:1
+EXT: 
+USN: uuid:94065e18-569e-3422-9447-50a14f0c97b8::urn:schemas-upnp-org:device:MediaServer:1
+Content-Length: 0
+
+-------------------------------------------
+
+3a. TV discovers MediaServer specified in the "Location" header and sends the following request on HTTP request over TCP
+GET /dev/9d02b786-9544-a4d9-ffff-ffffe2242ea3/desc.xml HTTP/1.1
+Host: 192.168.1.12:54263
+Date: Sun, 23 Sep 2012 00:41:46 GMT
+User-Agent: UPnP/1.0
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+
+3b. TV discovers Microsoft Server specified in the "Location" header and sends the following request on HTTP request over TCP
+GET /upnphost/udhisapi.dll?content=uuid:30302e5a-5077-49aa-942c-156e66812547 HTTP/1.1
+Host: 192.168.1.12:2869
+Date: Sun, 23 Sep 2012 01:27:11 GMT
+User-Agent: UPnP/1.0
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+
+3c. TV discovers PSP Server
+GET /description/fetch HTTP/1.1
+Host: 192.168.1.2:5001
+Date: Sun, 23 Sep 2012 02:29:20 GMT
+User-Agent: UPnP/1.0
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+
+-------------------------------------------
+
+4a. MediaServer responds with the following:
+HTTP/1.1 200 OK
+Content-type: text/xml
+Content-length: 1196
+Server: Windows7/6.1 UPnP/1.0 Teleal-Cling/1.0
+
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+    <specVersion>
+        <major>1</major>
+        <minor>0</minor>
+	</specVersion>
+	<device>
+	    <deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
+	    <UDN>uuid:9d02b786-9544-a4d9-ffff-ffffe2242ea3</UDN>
+	    <friendlyName>MediaServer</friendlyName>
+	    <manufacturer>Anonymous</manufacturer>
+?No Manufacturer URL?
+	    <modelDescription>MediaServer</modelDescription>
+	    <modelName>MediaServer</modelName>
+?straight number?	    <modelNumber>v1</modelNumber>  
+?Good URL?	    <presentationURL>HPLaptop</presentationURL> 
+?No Model URL?
+?No Serial Number?
+	    <dlna:X_DLNADOC xmlns:dlna="urn:schemas-dlna-org:device-1-0">DMS-1.50</dlna:X_DLNADOC>
+	    <dlna:X_DLNADOC xmlns:dlna="urn:schemas-dlna-org:device-1-0">M-DMS-1.50</dlna:X_DLNADOC>
+?No IconList?
+	    <serviceList>
+?No Connection Manager
+	        <service>
+	            <serviceType>urn:schemas-upnp-org:service:ContentDirectory:1</serviceType>
+	            <serviceId>urn:upnp-org:serviceId:ContentDirectory</serviceId>
+	            <controlURL>/dev/9d02b786-9544-a4d9-ffff-ffffe2242ea3/svc/upnp-org/ContentDirectory/action</controlURL>
+	            <eventSubURL>/dev/9d02b786-9544-a4d9-ffff-ffffe2242ea3/svc/upnp-org/ContentDirectory/event</eventSubURL>
+	            <SCPDURL>/dev/9d02b786-9544-a4d9-ffff-ffffe2242ea3/svc/upnp-org/ContentDirectory/desc.xml</SCPDURL>
+	         </service>
+	    </serviceList>
+	</device>
+</root>
+
+4b. Microsoft Server responds with the following:
+HTTP/1.1 200 OK
+Content-Length: 5671
+Content-Type: text/xml; charset="utf-8"
+Server: Microsoft-Windows-NT/5.1 UPnP/1.0 UPnP-Device-Host/1.0 Microsoft-HTTPAPI/2.0
+Date: Sun, 23 Sep 2012 01:27:01 GMT
+
+<?xml version="1.0"?>
+<root xmlns="urn:schemas-upnp-org:device-1-0">
+.<specVersion>
+..<major>1</major>
+..<minor>0</minor>
+.</specVersion>
+.<device>
+..<UDN>uuid:30302e5a-5077-49aa-942c-156e66812547</UDN>
+..<friendlyName>HPLAPTOP: Wes:</friendlyName>
+..<deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
+..<manufacturer>Microsoft Corporation</manufacturer>
+..<manufacturerURL>http://www.microsoft.com</manufacturerURL>
+..<modelName>Windows Media Player Sharing</modelName>
+..<modelNumber>12.0</modelNumber>
+..<modelURL>http://go.microsoft.com/fwlink/?LinkId=105926</modelURL>
+..<serialNumber>{6504943B-38A6-42C7-9305-3D25E514E8F1}</serialNumber>
+..<dlna:X_DLNADOC xmlns:dlna="urn:schemas-dlna-org:device-1-0">DMS-1.50</dlna:X_DLNADOC>
+..<iconList>
+...<icon>
+....<mimetype>image/jpeg</mimetype>
+....<width>120</width>
+....<height>120</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:13887bca-ebb3-4cbd-9edc-a8867606021f</url>
+...</icon>
+...<icon>
+....<mimetype>image/png</mimetype>
+....<width>120</width>
+....<height>120</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:d2468b7a-5003-4b87-be22-03810b9c750c</url>
+...</icon>
+...<icon>
+....<mimetype>image/jpeg</mimetype>
+....<width>48</width>
+....<height>48</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:277dea1b-f568-4e57-9d45-f9b108087b5a</url>
+...</icon>
+...<icon>
+....<mimetype>image/png</mimetype>
+....<width>48</width>
+....<height>48</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:28af2d59-33cc-46b9-8207-dfc0c16778db</url>
+...</icon>
+...<icon>
+....<mimetype>image/bmp</mimetype>
+....<width>48</width>
+....<height>48</height>
+....<depth>16</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:fed72bc1-1a31-4667-b7a0-07485f153a1f</url>
+...</icon>
+...<icon>
+....<mimetype>image/jpeg</mimetype>
+....<width>32</width>
+....<height>32</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:581b539e-f6ee-46da-88d0-b5c87138ddd8</url>
+...</icon>
+...<icon>
+....<mimetype>image/bmp</mimetype>
+....<width>32</width>
+....<height>32</height>
+....<depth>16</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:a90f0c7a-fbf9-44de-940e-e29d77581304</url>
+...</icon>
+...<icon>
+....<mimetype>image/jpeg</mimetype>
+....<width>120</width>
+....<height>120</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:da227d84-6451-4533-8735-271c8bca7e2c</url>
+...</icon>
+...<icon>
+....<mimetype>image/png</mimetype>
+....<width>120</width>
+....<height>120</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:17cff475-f715-4ba5-814c-bae5b6a4ec7d</url>
+...</icon>
+...<icon>
+....<mimetype>image/jpeg</mimetype>
+....<width>48</width>
+....<height>48</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:e3168ace-9c03-49a4-ae89-e597440d1eb0</url>
+...</icon>
+...<icon>
+....<mimetype>image/png</mimetype>
+....<width>48</width>
+....<height>48</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:3a9d8fe5-4669-40a7-b72d-fc1c5fc53ef2</url>
+...</icon>
+...<icon>
+....<mimetype>image/bmp</mimetype>
+....<width>48</width>
+....<height>48</height>
+....<depth>16</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:b4ed47d5-e7af-4df6-9a04-3fca9935983b</url>
+...</icon>
+...<icon>
+....<mimetype>image/jpeg</mimetype>
+....<width>32</width>
+....<height>32</height>
+....<depth>24</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:3343d91f-74e2-4d46-91aa-646c6b17e15b</url>
+...</icon>
+...<icon>
+....<mimetype>image/bmp</mimetype>
+....<width>32</width>
+....<height>32</height>
+....<depth>16</depth>
+....<url>/upnphost/udhisapi.dll?content=uuid:d0ec422b-ed56-4ff3-b6a6-7d2cc5654185</url>
+...</icon>
+..</iconList>
+..<serviceList>
+...<service>
+....<serviceType>urn:schemas-upnp-org:service:ConnectionManager:1</serviceType>
+....<serviceId>urn:upnp-org:serviceId:ConnectionManager</serviceId>
+....<controlURL>/upnphost/udhisapi.dll?control=uuid:30302e5a-5077-49aa-942c-156e66812547+urn:upnp-org:serviceId:ConnectionManager</controlURL>
+....<eventSubURL>/upnphost/udhisapi.dll?event=uuid:30302e5a-5077-49aa-942c-156e66812547+urn:upnp-org:serviceId:ConnectionManager</eventSubURL>
+....<SCPDURL>/upnphost/udhisapi.dll?content=uuid:460fe559-ba22-4e40-aaab-9d9d9d176121</SCPDURL>
+...</service>
+...<service>
+....<serviceType>urn:schemas-upnp-org:service:ContentDirectory:1</serviceType>
+....<serviceId>urn:upnp-org:serviceId:ContentDirectory</serviceId>
+....<controlURL>/upnphost/udhisapi.dll?control=uuid:30302e5a-5077-49aa-942c-156e66812547+urn:upnp-org:serviceId:ContentDirectory</controlURL>
+....<eventSubURL>/upnphost/udhisapi.dll?event=uuid:30302e5a-5077-49aa-942c-156e66812547+urn:upnp-org:serviceId:ContentDirectory</eventSubURL>
+....<SCPDURL>/upnphost/udhisapi.dll?content=uuid:7b93f950-8740-41cd-ac1c-49e71b28cc4a</SCPDURL>
+...</service>
+...<service>
+....<serviceType>urn:microsoft.com:service:X_MS_MediaReceiverRegistrar:1</serviceType>
+....<serviceId>urn:microsoft.com:serviceId:X_MS_MediaReceiverRegistrar</serviceId>
+....<controlURL>/upnphost/udhisapi.dll?control=uuid:30302e5a-5077-49aa-942c-156e66812547+urn:microsoft.com:serviceId:X_MS_MediaReceiverRegistrar</controlURL>
+....<eventSubURL>/upnphost/udhisapi.dll?event=uuid:30302e5a-5077-49aa-942c-156e66812547+urn:microsoft.com:serviceId:X_MS_MediaReceiverRegistrar</eventSubURL>
+....<SCPDURL>/upnphost/udhisapi.dll?content=uuid:f19722f3-3045-499c-ac69-b02ab4e463c6</SCPDURL>
+...</service>
+..</serviceList>
+.</device>
+</root>
+
+4c. PSP Server responds with the following:
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset="utf-8"
+Cache-Control: no-cache
+Expires: 0
+Accept-Ranges: bytes
+Connection: keep-alive
+Server: Windows_XP-x86-5.1, UPnP/1.0, PMS/1.50.0
+Content-Length: 2049
+
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:dlna="urn:schemas-dlna-org:device-1-0" xmlns="urn:schemas-upnp-org:device-1-0">
+.<specVersion>
+..<major>1</major>
+..<minor>0</minor>
+.</specVersion>
+.<URLBase>http://192.168.1.2:5001/</URLBase>
+.<device>
+..<dlna:X_DLNADOC xmlns:dlna="urn:schemas-dlna-org:device-1-0">DMS-1.50</dlna:X_DLNADOC>
+..<dlna:X_DLNADOC xmlns:dlna="urn:schemas-dlna-org:device-1-0">M-DMS-1.50</dlna:X_DLNADOC>
+..<deviceType>urn:schemas-upnp-org:device:MediaServer:1</deviceType>
+..<friendlyName>PS3 Media Server [CFSMain]</friendlyName>
+  <manufacturer>PMS</manufacturer>
+..<manufacturerURL>http://ps3mediaserver.blogspot.com</manufacturerURL>
+..<modelDescription>UPnP/AV 1.0 Compliant Media Server</modelDescription>
+..<modelName>PMS</modelName>
+..<modelNumber>01</modelNumber>
+..<modelURL>http://ps3mediaserver.blogspot.com</modelURL>
+..<serialNumber/>
+  <UPC/>
+  <UDN>uuid:94065e18-569e-3422-9447-50a14f0c97b8</UDN>
+  <iconList>
+...<icon>
+....<mimetype>image/jpeg</mimetype>
+....<width>120</width>
+....<height>120</height>
+....<depth>24</depth>
+....<url>/images/icon-256.png</url>
+...</icon>
+..</iconList>
+..<presentationURL>http://192.168.1.2:5001/console/index.html</presentationURL> 
+..<serviceList>
+...<service>
+....<serviceType>urn:schemas-upnp-org:service:ContentDirectory:1</serviceType>
+....<serviceId>urn:upnp-org:serviceId:ContentDirectory</serviceId>
+....<SCPDURL>/UPnP_AV_ContentDirectory_1.0.xml</SCPDURL>
+....<controlURL>/upnp/control/content_directory</controlURL>
+....<eventSubURL>/upnp/event/content_directory</eventSubURL>
+...</service>
+...<service>
+....<serviceType>urn:schemas-upnp-org:service:ConnectionManager:1</serviceType>
+....<serviceId>urn:upnp-org:serviceId:ConnectionManager</serviceId>
+....<SCPDURL>/UPnP_AV_ConnectionManager_1.0.xml</SCPDURL>
+....<controlURL>/upnp/control/connection_manager</controlURL>
+....<eventSubURL>/upnp/event/connection_manager</eventSubURL>
+...</service>
+..</serviceList>
+.</device>
+</root>
+
+-------------------------------------------
+
+5a. No more communication between TV and MediaServer
+
+5b. TV asks for ConnectionManager from Windows Media Server
+GET /upnphost/udhisapi.dll?content=uuid:460fe559-ba22-4e40-aaab-9d9d9d176121 HTTP/1.1
+Host: 192.168.1.12:2869
+Date: Sun, 23 Sep 2012 02:29:21 GMT
+User-Agent: UPnP/1.0
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+
+5c. TV asks for ConnectionManager from PSP
+GET /UPnP_AV_ConnectionManager_1.0.xml HTTP/1.1
+Host: 192.168.1.2:5001
+Date: Sun, 23 Sep 2012 02:29:20 GMT
+User-Agent: UPnP/1.0
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+
+-------------------------------------------
+
+6a. No more communication between TV and MediaServer
+
+6b. Windows Media Server responds with it's connection manager's available functions
+HTTP/1.1 200 OK
+Content-Length: 5422
+Content-Type: text/xml; charset="utf-8"
+Server: Microsoft-Windows-NT/5.1 UPnP/1.0 UPnP-Device-Host/1.0 Microsoft-HTTPAPI/2.0
+Date: Sun, 23 Sep 2012 02:29:11 GMT
+
+<?xml version="1.0"?>
+<scpd xmlns="urn:schemas-upnp-org:service-1-0">
+<specVersion>
+<major>1</major>
+<minor>0</minor>
+</specVersion>
+    <actionList>
+        <action>
+            <name>GetProtocolInfo</name>
+            <argumentList>
+                <argument>
+                    <name>Source</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>SourceProtocolInfo</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>Sink</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>SinkProtocolInfo</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+        <action>
+            <name>GetCurrentConnectionIDs</name>
+            <argumentList>
+                <argument>
+                    <name>ConnectionIDs</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>CurrentConnectionIDs</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+        <action>
+            <name>GetCurrentConnectionInfo</name>
+            <argumentList>
+                <argument>
+                    <name>ConnectionID</name>
+                    <direction>in</direction>
+                    <relatedStateVariable>A_ARG_TYPE_ConnectionID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>RcsID</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_RcsID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>AVTransportID</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_AVTransportID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>ProtocolInfo</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_ProtocolInfo</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>PeerConnectionManager</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_ConnectionManager</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>PeerConnectionID</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_ConnectionID</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>Direction</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_Direction</relatedStateVariable>
+                </argument>
+                <argument>
+                    <name>Status</name>
+                    <direction>out</direction>
+                    <relatedStateVariable>A_ARG_TYPE_ConnectionStatus</relatedStateVariable>
+                </argument>
+            </argumentList>
+        </action>
+    </actionList>
+    <serviceStateTable>
+        <stateVariable sendEvents="yes">
+            <name>SourceProtocolInfo</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>SinkProtocolInfo</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="yes">
+            <name>CurrentConnectionIDs</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_ConnectionStatus</name>
+            <dataType>string</dataType>
+            <allowedValueList>
+                <allowedValue>OK</allowedValue>
+                <allowedValue>ContentFormatMismatch</allowedValue>
+                <allowedValue>InsufficientBandwidth</allowedValue>
+                <allowedValue>UnreliableChannel</allowedValue>
+                <allowedValue>Unknown</allowedValue>
+            </allowedValueList>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_ConnectionManager</name>
+            <dataType>string</dataType>
+        </stateVariable>
+       <stateVariable sendEvents="no">
+           <name>A_ARG_TYPE_Direction</name>
+           <dataType>string</dataType>
+           <allowedValueList>
+                <allowedValue>Input</allowedValue>
+                <allowedValue>Output</allowedValue>
+           </allowedValueList>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_ProtocolInfo</name>
+            <dataType>string</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_ConnectionID</name>
+            <dataType>i4</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_AVTransportID</name>
+            <dataType>i4</dataType>
+        </stateVariable>
+        <stateVariable sendEvents="no">
+            <name>A_ARG_TYPE_RcsID</name>
+            <dataType>i4</dataType>
+        </stateVariable>
+    </serviceStateTable>
+</scpd>
+
+6c. PSP responds with it's connection manager's available functions
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset="utf-8"
+Cache-Control: no-cache
+Expires: 0
+Accept-Ranges: bytes
+Connection: keep-alive
+Server: Windows_XP-x86-5.1, UPnP/1.0, PMS/1.50.0
+Content-Length: 6990
+
+<?xml version="1.0" encoding="utf-8"?>
+<scpd xmlns="urn:schemas-upnp-org:service-1-0">
+   <specVersion>
+      <major>1</major>
+      <minor>0</minor>
+   </specVersion>
+   <actionList>
+      <action>
+         <name>GetCurrentConnectionInfo</name>
+         <argumentList>
+            <argument>
+               <name>ConnectionID</name>
+               <direction>in</direction>
+               <relatedStateVariable>A_ARG_TYPE_ConnectionID</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>RcsID</name>
+               <direction>out</direction>
+               <relatedStateVariable>A_ARG_TYPE_RcsID</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>AVTransportID</name>
+               <direction>out</direction>
+               <relatedStateVariable>A_ARG_TYPE_AVTransportID</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>ProtocolInfo</name>
+               <direction>out</direction>
+               <relatedStateVariable>A_ARG_TYPE_ProtocolInfo</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>PeerConnectionManager</name>
+               <direction>out</direction>
+               <relatedStateVariable>A_ARG_TYPE_ConnectionManager</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>PeerConnectionID</name>
+               <direction>out</direction>
+               <relatedStateVariable>A_ARG_TYPE_ConnectionID</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>Direction</name>
+               <direction>out</direction>
+               <relatedStateVariable>A_ARG_TYPE_Direction</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>Status</name>
+               <direction>out</direction>
+               <relatedStateVariable>A_ARG_TYPE_ConnectionStatus</relatedStateVariable>
+            </argument>
+         </argumentList>
+      </action>
+      <action>
+         <name>ConnectionComplete</name>
+         <argumentList>
+            <argument>
+               <name>ConnectionID</name>
+               <direction>in</direction>
+               <relatedStateVariable>A_ARG_TYPE_ConnectionID</relatedStateVariable>
+            </argument>
+         </argumentList>
+      </action>
+      <action>
+         <name>PrepareForConnection</name>
+         <argumentList>
+            <argument>
+               <name>RemoteProtocolInfo</name>
+               <direction>in</direction>
+               <relatedStateVariable>A_ARG_TYPE_ProtocolInfo</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>PeerConnectionManager</name>
+               <direction>in</direction>
+               <relatedStateVariable>A_ARG_TYPE_ConnectionManager</relatedStateVariable>
+            </argument>
+            <argument>
+               <name>PeerConnectionID</name>
+              <direction>in</direction>
+              <relatedStateVariable>A_ARG_TYPE_ConnectionID</relatedStateVariable>
+           </argument>
+           <argument>
+              <name>Direction</name>
+              <direction>in</direction>
+              <relatedStateVariable>A_ARG_TYPE_Direction</relatedStateVariable>
+           </argument>
+           <argument>
+              <name>ConnectionID</name>
+              <direction>out</direction>
+              <relatedStateVariable>A_ARG_TYPE_ConnectionID</relatedStateVariable>
+           </argument>
+           <argument>
+              <name>AVTransportID</name>
+              <direction>out</direction>
+              <relatedStateVariable>A_ARG_TYPE_AVTransportID</relatedStateVariable>
+           </argument>
+           <argument>
+              <name>RcsID</name>
+              <direction>out</direction>
+              <relatedStateVariable>A_ARG_TYPE_RcsID</relatedStateVariable>
+           </argument>
+        </argumentList>
+     </action>
+     <action>
+        <name>GetProtocolInfo</name>
+        <argumentList>
+           <argument>
+              <name>Source</name>
+              <direction>out</direction>
+              <relatedStateVariable>SourceProtocolInfo</relatedStateVariable>
+           </argument>
+           <argument>
+              <name>Sink</name>
+              <direction>out</direction>
+              <relatedStateVariable>SinkProtocolInfo</relatedStateVariable>
+           </argument>
+        </argumentList>
+     </action>
+     <action>
+         <name>GetCurrentConnectionIDs</name>
+         <argumentList>
+            <argument>
+               <name>ConnectionIDs</name>
+               <direction>out</direction>
+               <relatedStateVariable>CurrentConnectionIDs</relatedStateVariable>
+            </argument>
+         </argumentList>
+      </action>
+   </actionList>
+   <serviceStateTable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_ProtocolInfo</name>
+         <dataType>string</dataType>
+      </stateVariable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_ConnectionStatus</name>
+         <dataType>string</dataType>
+         <allowedValueList>
+            <allowedValue>OK</allowedValue>
+            <allowedValue>ContentFormatMismatch</allowedValue>
+            <allowedValue>InsufficientBandwidth</allowedValue>
+            <allowedValue>UnreliableChannel</allowedValue>
+            <allowedValue>Unknown</allowedValue>
+         </allowedValueList>
+      </stateVariable>
+      <stateVariable sendEvents="yes">
+         <name>SinkProtocolInfo</name>
+         <dataType>string</dataType>
+      </stateVariable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_AVTransportID</name>
+         <dataType>i4</dataType>
+      </stateVariable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_RcsID</name>
+         <dataType>i4</dataType>
+      </stateVariable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_ConnectionID</name>
+         <dataType>i4</dataType>
+      </stateVariable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_ConnectionManager</name>
+         <dataType>string</dataType>
+      </stateVariable>
+      <stateVariable sendEvents="yes">
+         <name>SourceProtocolInfo</name>
+         <dataType>string</dataType>
+      </stateVariable>
+      <stateVariable sendEvents="no">
+         <name>A_ARG_TYPE_Direction</name>
+         <dataType>string</dataType>
+         <allowedValueList>
+            <allowedValue>Input</allowedValue>
+            <allowedValue>Output</allowedValue>
+         </allowedValueList>
+      </stateVariable>
+      <stateVariable sendEvents="yes">
+         <name>CurrentConnectionIDs</name>
+         <dataType>string</dataType>
+      </stateVariable>
+   </serviceStateTable>
+</scpd>
+
+-------------------------------------------
+
+7a. No more communication between TV and MediaServer
+7b. TV performs SOAP call to get Protocol Information from Windows Server
+POST /upnphost/udhisapi.dll?control=uuid:30302e5a-5077-49aa-942c-156e66812547+urn:upnp-org:serviceId:ConnectionManager HTTP/1.1
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+Host: 192.168.1.12:2869
+User-Agent: UPnP/1.0 DLNADOC/1.50
+Content-Length: 273
+Content-Type: text/xml; charset="utf-8"
+SOAPACTION: "urn:schemas-upnp-org:service:ConnectionManager:1#GetProtocolInfo"
+
+<?xml version="1.0"?><s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><s:Body><u:GetProtocolInfo xmlns:u="urn:schemas-upnp-org:service:ConnectionManager:1"></u:GetProtocolInfo></s:Body></s:Envelope>
+
+7c. TV performs SOAP call to get Protocol Information from PSP Server
+POST /upnp/control/connection_manager HTTP/1.1
+X-AV-Physical-Unit-Info: pa="BRAVIA KDL-60EX700";
+X-AV-Client-Info: av=5.0; cn="Sony Corporation"; mn="BRAVIA KDL-60EX700"; mv="1.7";
+Host: 192.168.1.2:5001
+User-Agent: UPnP/1.0 DLNADOC/1.50
+Content-Length: 273
+Content-Type: text/xml; charset="utf-8"
+SOAPACTION: "urn:schemas-upnp-org:service:ConnectionManager:1#GetProtocolInfo"
+
+<?xml version="1.0"?><s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><s:Body><u:GetProtocolInfo xmlns:u="urn:schemas-upnp-org:service:ConnectionManager:1"></u:GetProtocolInfo></s:Body></s:Envelope>
+
+-------------------------------------------
+
+8a. No more communication between TV and MediaServer
+8b. Windows Media Server bombs out with SOAP Fault:
+HTTP/1.1 500 Internal Server Error
+Content-Length: 499
+Content-Type: text/xml; charset="utf-8"
+Server: Microsoft-Windows-NT/5.1 UPnP/1.0 UPnP-Device-Host/1.0 Microsoft-HTTPAPI/2.0
+Date: Sun, 23 Sep 2012 02:29:11 GMT
+
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body><SOAP-ENV:Fault><faultcode>SOAP-ENV:Client</faultcode><faultstring>UPnPError</faultstring><detail><u:UPnPError xmlns:u="urn:schemas-upnp-org:control-1-0"><u:errorCode>501</u:errorCode><u:errorDescription>Action Failed</u:errorDescription></u:UPnPError></detail></SOAP-ENV:Fault></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+8c. PSP Server responds with protocol information
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset="utf-8"
+Server: Windows_XP-x86-5.1, UPnP/1.0, PMS/1.50.0
+Content-Length: 2389
+
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<s:Body>
+<u:GetProtocolInfoResponse xmlns:u="urn:schemas-upnp-org:service:ConnectionManager:1"><Source>http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_SM,http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_MED,http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_LRG,http-get:*:audio/mpeg:DLNA.ORG_PN=MP3,http-get:*:audio/L16:DLNA.ORG_PN=LPCM,http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_HD_24_AC3_ISO;SONY.COM_PN=AVC_TS_HD_24_AC3_ISO,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_HD_24_AC3;SONY.COM_PN=AVC_TS_HD_24_AC3,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_HD_24_AC3_T;SONY.COM_PN=AVC_TS_HD_24_AC3_T,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_PS_PAL,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_PS_NTSC,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_50_L2_T,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_60_L2_T,http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_SD_EU_ISO,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_EU,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_EU_T,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_50_AC3_T,http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_HD_50_L2_ISO;SONY.COM_PN=HD2_50_ISO,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_SD_60_AC3_T,http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_TS_HD_60_L2_ISO;SONY.COM_PN=HD2_60_ISO,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_50_L2_T;SONY.COM_PN=HD2_50_T,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=MPEG_TS_HD_60_L2_T;SONY.COM_PN=HD2_60_T,http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_HD_50_AC3_ISO;SONY.COM_PN=AVC_TS_HD_50_AC3_ISO,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_HD_50_AC3;SONY.COM_PN=AVC_TS_HD_50_AC3,http-get:*:video/mpeg:DLNA.ORG_PN=AVC_TS_HD_60_AC3_ISO;SONY.COM_PN=AVC_TS_HD_60_AC3_ISO,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_HD_60_AC3;SONY.COM_PN=AVC_TS_HD_60_AC3,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_HD_50_AC3_T;SONY.COM_PN=AVC_TS_HD_50_AC3_T,http-get:*:video/vnd.dlna.mpeg-tts:DLNA.ORG_PN=AVC_TS_HD_60_AC3_T;SONY.COM_PN=AVC_TS_HD_60_AC3_T,http-get:*:video/x-mp2t-mphl-188:*,http-get:*:*:*,http-get:*:video/*:*,http-get:*:audio/*:*,http-get:*:image/*:*</Source><Sink></Sink></u:GetProtocolInfoResponse>
+</s:Body>
+</s:Envelope>
+

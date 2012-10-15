@@ -1,0 +1,384 @@
+<DIDL-Lite xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/"
+    xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" >
+
+    <container
+        id="0$2$1"
+        childCount="1"
+        parentID="0$2"
+        restricted="true" >
+
+        <dc:title>
+Adults
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$1/thumbnail0000Adults
+        </res>
+
+        <dc:date>
+2012-04-29T21:34:13
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$2$2"
+        childCount="1"
+        parentID="0$2"
+        restricted="true" >
+
+        <dc:title>
+Girls
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$2/thumbnail0000Girls
+        </res>
+
+        <dc:date>
+2012-03-10T19:46:07
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$2$3"
+        childCount="1"
+        parentID="0$2"
+        restricted="true" >
+
+        <dc:title>
+Halloween
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$3/thumbnail0000Halloween
+        </res>
+
+        <dc:date>
+2012-01-15T14:07:48
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$2$4"
+        childCount="1"
+        parentID="0$2"
+        restricted="true" >
+
+        <dc:title>
+Kids (Animated)
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$4/thumbnail0000Kids+%28Animated%29
+        </res>
+
+        <dc:date>
+2012-03-25T10:39:27
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$2$5"
+        childCount="1"
+        parentID="0$2"
+        restricted="true" >
+
+        <dc:title>
+Kids (Not Animated)
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$5/thumbnail0000Kids+%28Not+Animated%29
+        </res>
+
+        <dc:date>
+2012-01-29T15:18:32
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <container
+        id="0$2$6"
+        childCount="1"
+        parentID="0$2"
+        restricted="true" >
+
+        <dc:title>
+Young Children
+        </dc:title>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$6/thumbnail0000Young+Children
+        </res>
+
+        <dc:date>
+2012-03-04T09:15:27
+        </dc:date>
+
+        <upnp:class>
+object.container.storageFolder
+        </upnp:class>
+    </container>
+
+    <item
+        id="0$2$7"
+        parentID="0$2"
+        restricted="true">
+
+        <dc:title>
+BrendaFunnyMoment.mpg
+        </dc:title>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="418503"
+            duration="00:00:36.00"
+            nrAudioChannels="2"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_OP=11"
+            resolution="320x240"
+            sampleFrequency="44100"
+            size="15136855" >
+http://192.168.1.2:5001/get/0$2$7/BrendaFunnyMoment.mpg
+        </res>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="418503"
+            duration="00:00:36.00"
+            nrAudioChannels="2"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11"
+            resolution="320x240"
+            sampleFrequency="44100"
+            size="15136855" >
+http://192.168.1.2:5001/get/0$2$7/BrendaFunnyMoment.mpg
+        </res>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="418503"
+            duration="00:00:36.00"
+            nrAudioChannels="2"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11"
+            resolution="320x240"
+            sampleFrequency="44100"
+            size="15136855" >
+http://192.168.1.2:5001/get/0$2$7/BrendaFunnyMoment.mpg
+        </res>
+
+        <upnp:albumArtURI
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            dlna:profileID="JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$7/thumbnail0000BrendaFunnyMoment.mpg
+        </upnp:albumArtURI>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$7/thumbnail0000BrendaFunnyMoment.mpg
+        </res>
+
+        <dc:date>
+2001-05-08T23:54:46
+        </dc:date>
+
+        <upnp:class>
+object.item.videoItem
+        </upnp:class>
+    </item>
+
+    <item
+        id="0$2$8"
+        parentID="0$2"
+        restricted="true">
+
+        <dc:title>
+DELTA.MPG [MEncoder]
+        </dc:title>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="74786"
+            duration="00:00:08.00"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_OP=11"
+            resolution="320x200" >
+http://192.168.1.2:5001/get/0$2$8/DELTA.MPG
+        </res>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="74786"
+            duration="00:00:08.00"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11"
+            resolution="320x200" >
+http://192.168.1.2:5001/get/0$2$8/DELTA.MPG
+        </res>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="74786"
+            duration="00:00:08.00"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11"
+            resolution="320x200" >
+http://192.168.1.2:5001/get/0$2$8/DELTA.MPG
+        </res>
+
+        <upnp:albumArtURI
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            dlna:profileID="JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$8/thumbnail0000DELTA.MPG
+        </upnp:albumArtURI>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$8/thumbnail0000DELTA.MPG
+        </res>
+
+        <dc:date>
+2012-09-26T20:56:48
+        </dc:date>
+
+        <upnp:class>
+object.item.videoItem
+        </upnp:class>
+    </item>
+
+    <item
+        id="0$2$9"
+        parentID="0$2"
+        restricted="true">
+
+        <dc:title>
+RoseBloom.avi [MEncoder]
+        </dc:title>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="144354"
+            duration="00:00:06.00"
+            nrAudioChannels="1"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_OP=11"
+            resolution="240x180"
+            sampleFrequency="22050" >
+http://192.168.1.2:5001/get/0$2$9/RoseBloom.avi
+        </res>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="144354"
+            duration="00:00:06.00"
+            nrAudioChannels="1"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11"
+            resolution="240x180"
+            sampleFrequency="22050" >
+http://192.168.1.2:5001/get/0$2$9/RoseBloom.avi
+        </res>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="144354"
+            duration="00:00:06.00"
+            nrAudioChannels="1"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11"
+            resolution="240x180"
+            sampleFrequency="22050" >
+http://192.168.1.2:5001/get/0$2$9/RoseBloom.avi
+        </res>
+
+        <upnp:albumArtURI
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            dlna:profileID="JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$9/thumbnail0000RoseBloom.avi
+        </upnp:albumArtURI>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$9/thumbnail0000RoseBloom.avi
+        </res>
+
+        <dc:date>
+1999-06-21T19:08:10
+        </dc:date>
+
+        <upnp:class>
+object.item.videoItem
+        </upnp:class>
+    </item>
+
+    <item
+        id="0$2$10"
+        parentID="0$2"
+        restricted="true">
+
+        <dc:title>
+trailer_1080p.mov [MEncoder]
+        </dc:title>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="935719"
+            duration="00:00:32.00"
+            nrAudioChannels="6"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_PAL;DLNA.ORG_OP=11"
+            resolution="1920x1080"
+            sampleFrequency="48000" >
+http://192.168.1.2:5001/get/0$2$10/trailer_1080p.mov
+        </res>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="935719"
+            duration="00:00:32.00"
+            nrAudioChannels="6"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11"
+            resolution="1920x1080"
+            sampleFrequency="48000" >
+http://192.168.1.2:5001/get/0$2$10/trailer_1080p.mov
+        </res>
+
+        <res
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            bitrate="935719"
+            duration="00:00:32.00"
+            nrAudioChannels="6"
+            protocolInfo="http-get:*:video/mpeg:DLNA.ORG_PN=MPEG_PS_NTSC;DLNA.ORG_OP=11"
+            resolution="1920x1080"
+            sampleFrequency="48000" >
+http://192.168.1.2:5001/get/0$2$10/trailer_1080p.mov
+        </res>
+
+        <upnp:albumArtURI
+            xmlns:dlna="urn:schemas-dlna-org:metadata-1-0/"
+            dlna:profileID="JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$10/thumbnail0000trailer_1080p.mov
+        </upnp:albumArtURI>
+
+        <res protocolInfo="http-get:*:image/jpeg:DLNA.ORG_PN=JPEG_TN" >
+http://192.168.1.2:5001/get/0$2$10/thumbnail0000trailer_1080p.mov
+        </res>
+
+        <dc:date>
+2012-09-27T22:24:59
+        </dc:date>
+
+        <upnp:class>
+object.item.videoItem
+        </upnp:class>
+    </item>
+
+</DIDL-Lite>
