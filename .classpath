@@ -22,6 +22,5 @@
 	<classpathentry kind="lib" path="lib/jetty-plus-8.1.7.v20120910.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/cling"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/seamless"/>
-	<classpathentry kind="lib" path="lib/WMCCommonUtil.jar"/>
 	<classpathentry kind="output" path="Upnp/bin"/>
 </classpath>
